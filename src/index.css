@@ -1,0 +1,211 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400&display=swap");
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Montserrat, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.layout {
+  overflow: hidden;
+}
+
+header {
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 3rem 5rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 24px;
+  color: #da9f9f;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #da9f9f;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.homepage {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.hp-text {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name,
+.title {
+  color: #da9f9f;
+}
+
+.name {
+  font-size: clamp(2rem, 7vw, 200px);
+}
+
+.title {
+  font-size: clamp(0.5rem, 1vw, 50px);
+  font-weight: 560;
+  letter-spacing: 1px;
+}
+
+.homepage img {
+  position: absolute;
+}
+
+.mountain {
+  width: 100%;
+  left: 0;
+}
+
+.mountain.mt1 {
+  right: -15%;
+}
+
+.mountain.mt1, .mountain.mt3  {
+  bottom: -25%;
+}
+
+.mountain.mt2 {
+  bottom: -20%;
+}
+
+.mountain.mt4 {
+  bottom: -15%;
+}
+.cloud {
+  width: 75%;
+  top: 15%;
+  animation: moveClouds 5s linear infinite alternate;
+}
+
+.sun {
+  width: 10%;
+  top: 25%;
+  left: 50%;
+}
+
+.sun-cloud {
+  width: 25%;
+  top: 30%;
+  animation: moveSunCloud 6s linear infinite alternate;
+}
+
+.about {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(
+    180deg,
+    #fbc6c6,
+    #fbc9c9,
+    #fbcbcb,
+    #fbcece,
+    #fbd0d0
+  );
+}
+
+.about p {
+  width: 50%;
+}
+
+.skills {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+@keyframes moveClouds {
+  from {
+    left: 13%;
+  }
+  to {
+    left: 12%;
+  }
+}
+
+@keyframes moveSunCloud {
+  from {
+    left: 38%;
+  }
+  to {
+    left: 37%;
+  }
+}
+
+
+
+@media screen and (max-width: 1024px) {
+  .mountain.mt1,
+  .mountain.mt2,
+  .mountain.mt3,
+  .mountain.mt4 {
+    bottom: 0;
+  }
+
+  .cloud {
+    width: 90%;
+    top: 35%;
+  }
+
+  .sun {
+    width: 20%;
+    top: 32%;
+  }
+
+  .sun-cloud {
+    width: 40%;
+    top: 38%;
+  }
+}
+
+@media screen and (max-device-width: 480px) {
+  .cloud {
+    top: 45%;
+  }
+
+  .sun {
+    top: 38%;
+  }
+
+  .sun-cloud {
+    top: 42%;
+  }
+}
